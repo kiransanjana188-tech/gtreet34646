@@ -1,0 +1,6 @@
+{
+  "name": "To Soundarya — The Story I Never Got to Tell",
+  "description": "A cinematic and emotional single-page birthday tribute website for Soundarya, featuring a gorgeous visual timeline, interactive effects, dynamic background themes, and a reading-optimized layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

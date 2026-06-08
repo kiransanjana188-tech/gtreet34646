@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@300..800&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom scrollbar to keep it sleek */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(12, 13, 18, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(18, 20, 29, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Selection custom color */
+::selection {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cinematic typography override for standard screen reading sizes */
+.story-font-large p {
+  font-size: 1.15rem !important;
+  line-height: 1.85 !important;
+}
+@media (min-width: 640px) {
+  .story-font-large p {
+    font-size: 1.35rem !important;
+  }
+}
+
+/* Premium Custom Cinematic Animation Keyframes */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -2%); }
+  20% { transform: translate(-3%, 1%); }
+  30% { transform: translate(1%, -3%); }
+  45% { transform: translate(-2%, 2%); }
+  60% { transform: translate(2%, -1%); }
+  75% { transform: translate(-3%, 1%); }
+  90% { transform: translate(1%, -2%); }
+}
+
+@keyframes goldShimmer {
+  0%, 100% {
+    background-size: 200% auto;
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes celestialPulse {
+  0%, 100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 0.2;
+    filter: blur(80px);
+  }
+  50% {
+    transform: scale(1.15) translate(-45%, -45%);
+    opacity: 0.35;
+    filter: blur(100px);
+  }
+}
+
+@keyframes slowOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-gold-shimmer {
+  animation: goldShimmer 6s linear infinite;
+}
+
+.celestial-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(650px, 90vw);
+  height: min(650px, 90vw);
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(244, 63, 94, 0.08) 45%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: celestialPulse 15s ease-in-out infinite;
+}
+
+.celestial-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(850px, 120vw);
+  height: min(850px, 120vw);
+  border-radius: 9999px;
+  border: 1px dashed rgba(255, 255, 255, 0.03);
+  z-index: -2;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: slowOrbit 90s linear infinite;
+}
+
